@@ -1,5 +1,4 @@
 import "@/app/ui/globals.css";
-import Script from "next/script";
 
 export const metadata = {
     title: {
@@ -58,7 +57,6 @@ export default function RootLayout({ children }) {
     return (
         <html lang="es_MX" className="h-full">
             <body className="h-full">
-                <Script src="https://tally.so/widgets/embed.js" strategy="beforeInteractive" async={true}/>
                 {children}
             </body>
         </html>
