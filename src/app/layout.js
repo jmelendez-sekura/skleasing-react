@@ -56,7 +56,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className="h-full">
+        <html lang="es_MX" className="h-full">
             <body className="h-full">
                 <Script src="https://tally.so/widgets/embed.js" strategy="beforeInteractive" async={true}/>
                 {children}
