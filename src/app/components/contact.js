@@ -4,7 +4,7 @@ import { faPhone, faEnvelope, faLocationDot, faClock} from "@fortawesome/free-so
 
 export default function Contact(){
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center flex-col">
+        <div id="Contacto" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center flex-col pt-28">
             <div className="text-center space-y-4 mb-16 ">
                 <h2 className="text-4xl md:text-5xl text-gray-900 font-bold text-center">Solicita tu <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Cotización</span></h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto text-center">Nuestro equipo de expertos está listo para diseñar la solución de leasing perfecta para tu empresa. Contáctanos hoy mismo.</p>

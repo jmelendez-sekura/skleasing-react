@@ -25,6 +25,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.text-secondary{
+  color: #454745;
+}
+
 .text-tertiary{
   color: #6a6c6a;
 }
@@ -36,3 +40,36 @@ body {
 .bg-accent:hover{
   background-color: #6aabe1;
 }
+
+.border-input{
+  border-color: hsl(214.3 31.8% 91.4%);
+}
+
+@keyframes clients {
+  0%{
+    transform: translateX(0%);
+  }
+
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes clients-reverse {
+  0%{
+    transform: translateX(-100%);
+  }
+
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+.animate-clients{
+  animation: clients 90s linear infinite;
+}
+
+.animate-clients-reverse{
+  animation: clients-reverse 90s linear infinite;
+}
+
