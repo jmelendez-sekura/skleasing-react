@@ -2,7 +2,7 @@
 const nextConfig = {
     basePath: "/skleasing-react",
     //output: "export",  // <=== enables static exports
-    reactStrictMode: true,
+    //reactStrictMode: true,
     images: {
         dangerouslyAllowSVG: true,
         contentDispositionType: 'attachment',
