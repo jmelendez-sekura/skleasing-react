@@ -31,7 +31,9 @@ export async function sendCotization(prevState, formData){
         };
     }
 
-    const response = await fetch("http://localhost:3000/api/save-cotization", {
+    const url = process.env.NODE_ENV == "development" ? "http://localhost:3000/api/save-cotization" : "https://skleasing-react-pjmyh46a0-jmelendez-sekuras-projects.vercel.app/api";
+
+    const response = await fetch(url, {
         method: "POST",
         body: formData,
     });
