@@ -1,4 +1,5 @@
 import "@/app/ui/globals.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
     title: {

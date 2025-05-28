@@ -9,7 +9,7 @@ export default function Page() {
             <NavBar />
             <Header/>
             <Clients/>
-            <Contact />
+            <Contact/>
         </>
     );
 }
