@@ -15,7 +15,7 @@ const initialState = {
         active: "",
         message: ""
     },
-    success: "",
+    success: false,
     errors: {
         name: "",
         company: "",

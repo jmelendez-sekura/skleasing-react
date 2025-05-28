@@ -37,6 +37,6 @@ export async function sendCotization(prevState, formData){
     });
 
     return {
-        success: "Tu cotización se envió correctamente"
+        success: true
     };
 }

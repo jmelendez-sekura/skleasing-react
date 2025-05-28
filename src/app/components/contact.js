@@ -1,4 +1,3 @@
-import { ToastContainer, toast } from 'react-toastify';
 import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLocationDot, faClock} from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +7,6 @@ export default function Contact(){
 
     return (
         <>
-            <ToastContainer/>
             <div id="Contacto" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center flex-col pt-28">
                 <div className="text-center space-y-4 mb-16 ">
                     <h2 className="text-4xl md:text-5xl text-gray-900 font-bold text-center">Solicita tu <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Cotización</span></h2>
