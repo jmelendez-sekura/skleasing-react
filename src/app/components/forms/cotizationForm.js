@@ -5,6 +5,7 @@ import { useFormStatus } from "react-dom";
 import { sendCotization } from "@/app/api/action";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { usePathname } from "next/navigation";
 
 const initialState = {
     data: {
@@ -29,7 +30,7 @@ const initialState = {
 export default function CotizationForm(){
     const [state, formAction] = useActionState(sendCotization, initialState);
 
-    console.log(process.env.NODE_ENV);
+    console.log(usePathname());
 
     return (
         <form action={formAction} className="space-y-6">
