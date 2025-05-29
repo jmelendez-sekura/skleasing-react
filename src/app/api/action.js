@@ -38,14 +38,10 @@ export async function sendCotization(prevState, formData){
         body: formData,
     });
 
-
+    const json = await response.json();
 
     return {
         success: true,
-        connectionSettings: {
-            host: process.env.db_server,
-            user: process.env.db_user,
-            db: process.env.db
-        }
+        response: json,
     };
 }
