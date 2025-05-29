@@ -8,13 +8,19 @@ export async function addCotization({values = []}) {
         database: process.env.db,
     });
 
-    var aux;
+    connection.connect((error) =>{
+        if(error){
+            return error.message;
+        }
+    });
+
+    var aux = "No ocurrio nada";
 
     connection.query("INSERT INTO COTIZACION (nombre, correo, telefono, empresa, plazo, activo, origen) VALUES (?, ?, ?, ?, ?, ?, 'SK Leasing')", values, function(error, results, fields){
         if(error){
-            aux =  error.message;
+            return error.message;
         }else{
-            aux = results;
+            return results.toString();
         }
     });
 
