@@ -8,11 +8,17 @@ export async function addCotization({values = []}) {
         database: process.env.db,
     });
 
+    var aux;
+
     connection.query("INSERT INTO COTIZACION (nombre, correo, telefono, empresa, plazo, activo, origen) VALUES (?, ?, ?, ?, ?, ?, 'SK Leasing')", values, function(error, results, fields){
         if(error){
-            throw error;
+            aux =  error;
+        }else{
+            aux = results;
         }
     });
 
     connection.end();
+
+    return aux;
 }

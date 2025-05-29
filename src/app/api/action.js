@@ -38,8 +38,15 @@ export async function sendCotization(prevState, formData){
         body: formData,
     });
 
+
+
     return {
         success: true,
         url: window.location.href,
+        connectionSettings: {
+            host: process.env.db_server,
+            user: process.env.db_user,
+            db: process.env.db
+        }
     };
 }

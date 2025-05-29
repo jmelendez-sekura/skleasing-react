@@ -10,7 +10,7 @@ export async function POST(request){
     const active = formData.get("active");
     const message = formData.get("message");
 
-    await addCotization({values: [name, email, tel, company, message, active]});
+    const results = await addCotization({values: [name, email, tel, company, message, active]});
 
-    return Response.json(name);
+    return Response.json(results);
 }
