@@ -13,7 +13,7 @@ export async function addCotization({values = []}) {
     const query = connection.query("INSERT INTO COTIZACION (nombre, correo, telefono, empresa, plazo, activo, origen) VALUES (?, ?, ?, ?, ?, ?, 'SK Leasing')", values);
 
     query.on("result", function(row){
-        aux += row.toString();
+        aux += row?.toString() ?? "No se agrego ninguna fila";
     });
 
     query.on("error", function(error){
