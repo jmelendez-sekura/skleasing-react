@@ -8,25 +8,19 @@ export async function addCotization({values = []}) {
         database: process.env.db,
     });
 
-    connection.connect((error) =>{
-        if(error){
-            return error.message;
-        }
+    var aux = "Conectado con ID: " + connection.threadId.toString() + " ";
+
+    const query = connection.query("INSERT INTO COTIZACION (nombre, correo, telefono, empresa, plazo, activo, origen) VALUES (?, ?, ?, ?, ?, ?, 'SK Leasing')", values);
+
+    query.on("result", function(row){
+        aux += row.toString();
     });
 
-
-
-    var aux = "Conectado con ID: " + connection.threadId.toString()+ " ";
-
-    connection.query("INSERT INTO COTIZACION (nombre, correo, telefono, empresa, plazo, activo, origen) VALUES (?, ?, ?, ?, ?, ?, 'SK Leasing')", values, function(error, results, fields){
-        if(error){
-            return error.message;
-        }
-
-        aux += results.insertId.toString();
+    query.on("error", function(error){
+        aux += "Ocurrio un error: "+ error.message;
     });
 
     connection.end();
 
-    return aux.toString();
+    return aux?.toString() ?? "Es null";
 }
