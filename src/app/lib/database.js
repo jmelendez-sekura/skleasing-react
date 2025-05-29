@@ -14,7 +14,9 @@ export async function addCotization({values = []}) {
         }
     });
 
-    var aux = "No ocurrio nada";
+
+
+    var aux = "Conectado con ID: " + connection.threadId.toString();
 
     connection.query("INSERT INTO COTIZACION (nombre, correo, telefono, empresa, plazo, activo, origen) VALUES (?, ?, ?, ?, ?, ?, 'SK Leasing')", values, function(error, results, fields){
         if(error){
