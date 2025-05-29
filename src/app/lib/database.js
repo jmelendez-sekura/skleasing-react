@@ -21,12 +21,12 @@ export async function addCotization({values = []}) {
     connection.query("INSERT INTO COTIZACION (nombre, correo, telefono, empresa, plazo, activo, origen) VALUES (?, ?, ?, ?, ?, ?, 'SK Leasing')", values, function(error, results, fields){
         if(error){
             return error.message;
-        }else{
-            return results.toString();
         }
+
+        aux = results.insertId
     });
 
     connection.end();
 
-    return aux;
+    return aux.toString();
 }
