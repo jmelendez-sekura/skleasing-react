@@ -40,6 +40,8 @@ export async function sendCotization(prevState, formData){
 
     const json = await response.json();
 
+    console.log(json);
+
     return {
         success: true,
         response: json,

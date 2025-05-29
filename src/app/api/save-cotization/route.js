@@ -1,22 +1,23 @@
+import { NextResponse } from 'next/server';
 import { addCotization } from "../../lib/database";
 
 export async function POST(request){
     const formData = await request.formData();
 
-    const name = formData.get("name");
-    const company = formData.get("company");
-    const email = formData.get("email");
-    const tel = formData.get("tel");
-    const active = formData.get("active");
-    const message = formData.get("message");
+    const nombre = formData.get("name");
+    const empresa = formData.get("company");
+    const correo = formData.get("email");
+    const telefono = formData.get("tel");
+    const activo = formData.get("active");
+    const mensaje = formData.get("message");
 
-    const results = await addCotization({values: [name, email, tel, company, message, active]});
+    try{
+        const results = await addCotization({values: {nombre, empresa, correo, telefono, activo, mensaje}});
 
-    const json = {
-        value: results.toString(),
-    };
+        console.log("Resultado de la inserción: "+ results);
 
-
-
-    return Response.json(json);
+        return NextResponse.json(results);
+    }catch(error){
+        return NextResponse.json({message: "Ocurrío un error", error: error, form: {nombre, empresa, correo, telefono, activo, mensaje}});
+    }
 }
