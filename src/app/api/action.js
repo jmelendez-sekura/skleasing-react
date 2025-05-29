@@ -42,7 +42,6 @@ export async function sendCotization(prevState, formData){
 
     return {
         success: true,
-        url: window.location.href,
         connectionSettings: {
             host: process.env.db_server,
             user: process.env.db_user,
