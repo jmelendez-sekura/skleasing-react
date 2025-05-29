@@ -16,14 +16,14 @@ export async function addCotization({values = []}) {
 
 
 
-    var aux = "Conectado con ID: " + connection.threadId.toString();
+    var aux = "Conectado con ID: " + connection.threadId.toString()+ " ";
 
     connection.query("INSERT INTO COTIZACION (nombre, correo, telefono, empresa, plazo, activo, origen) VALUES (?, ?, ?, ?, ?, ?, 'SK Leasing')", values, function(error, results, fields){
         if(error){
             return error.message;
         }
 
-        aux = results.insertId
+        aux += results.insertId.toString();
     });
 
     connection.end();
