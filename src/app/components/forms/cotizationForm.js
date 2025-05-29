@@ -30,7 +30,7 @@ const initialState = {
 export default function CotizationForm(){
     const [state, formAction] = useActionState(sendCotization, initialState);
 
-    console.log(usePathname());
+    console.log(window.location.href);
 
     return (
         <form action={formAction} className="space-y-6">

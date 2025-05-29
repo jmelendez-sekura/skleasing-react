@@ -39,6 +39,7 @@ export async function sendCotization(prevState, formData){
     });
 
     return {
-        success: true
+        success: true,
+        url: window.location.href,
     };
 }
