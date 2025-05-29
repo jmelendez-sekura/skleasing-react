@@ -12,5 +12,11 @@ export async function POST(request){
 
     const results = await addCotization({values: [name, email, tel, company, message, active]});
 
-    return Response.json(results);
+    const json = {
+        value: results.toString(),
+    };
+
+
+
+    return Response.json(json);
 }
