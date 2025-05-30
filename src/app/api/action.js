@@ -42,8 +42,5 @@ export async function sendCotization(prevState, formData){
 
     console.log(json);
 
-    return {
-        success: true,
-        response: json,
-    };
+    return json;
 }
