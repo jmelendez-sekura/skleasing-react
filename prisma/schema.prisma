@@ -23,5 +23,5 @@ model Cotizacion {
   telefono    String
   activo      String
   mensaje     String
-  enviado_el  DateTime  @default(now())
+  enviado_el  DateTime @default(dbgenerated("CURRENT_TIMESTAMP()")) @db.Timestamp
 }

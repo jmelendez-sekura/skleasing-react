@@ -14,8 +14,6 @@ export async function POST(request){
     try{
         const results = await addCotization({values: {nombre, empresa, correo, telefono, activo, mensaje}});
 
-        console.log("Resultado de la inserción: "+ results);
-
         return NextResponse.json(results);
     }catch(error){
         return NextResponse.json({message: "Ocurrío un error", error: error, form: {nombre, empresa, correo, telefono, activo, mensaje}});
