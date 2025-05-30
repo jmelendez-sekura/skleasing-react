@@ -16,6 +16,6 @@ export async function POST(request){
 
         return NextResponse.json(results);
     }catch(error){
-        return NextResponse.json({message: "Ocurrío un error", error: error, form: {nombre, empresa, correo, telefono, activo, mensaje}});
+        return NextResponse.json({message: "Ocurrío un error", error: error, form: {nombre, empresa, correo, telefono, activo, mensaje}, parameters: {url: process.env.DATABASE_URL}});
     }
 }
