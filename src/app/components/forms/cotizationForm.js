@@ -24,24 +24,30 @@ const initialState = {
         tel: "",
         active: "",
         message: ""
-    }
+    },
+    toastId: ""
 };
 
 export default function CotizationForm(){
     const [state, formAction] = useActionState(sendCotization, initialState);
 
+    const handleSubmit = (formData) => {
+        state.toastId = toast.loading('Loading...');
+        formAction(formData);
+    };
+
     useEffect(() => {
         if(state.success === "success"){
-            toast.success("Tu cotización se envío correctamente", {toastId: "sucess1"});
+            toast.update(state.toastId, { render: 'Tu cotización se envió correctamente', type: "success", autoClose: 1500, closeButton: true, isLoading: false });
         }else if(state.success === "error"){
-            toast.error("Ocurrió un error, intentalo de nuevo", {toastId: "error1"});
+            toast.update(state.toastId, { render: 'Ocurrió un error al mandar tu cotización, intentalo de nuevo', type: "error", autoClose: 1500, closeButton: true, isLoading: false, });
         }
 
         state.success = initialState.success;
     });
 
     return (
-        <form action={formAction} className="space-y-6">
+        <form action={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
                 <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nombre Completo</label>

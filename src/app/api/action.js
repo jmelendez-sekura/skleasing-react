@@ -28,7 +28,8 @@ export async function sendCotization(prevState, formData){
                 active: fieldErrors.active,
                 message: fieldErrors.message
             },
-            success: "error"
+            success: "error",
+            toastId: prevState.toastId
         };
     }
 
@@ -40,6 +41,8 @@ export async function sendCotization(prevState, formData){
     });
 
     const json = await response.json();
+
+    json.toastId = prevState.toastId;
 
     return json;
 }
