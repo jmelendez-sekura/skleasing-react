@@ -30,6 +30,8 @@ const initialState = {
 export default function CotizationForm(){
     const [state, formAction] = useActionState(sendCotization, initialState);
 
+    console.log(state.error);
+
     return (
         <form action={formAction} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
