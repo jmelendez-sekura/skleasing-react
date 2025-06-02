@@ -5,6 +5,7 @@ import { useFormStatus } from "react-dom";
 import { sendCotization } from "@/app/api/action";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toast } from "react-toastify";
 
 const initialState = {
     data: {

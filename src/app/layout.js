@@ -1,5 +1,5 @@
 import "@/app/ui/globals.css";
-import { ToastContainer } from 'react-toastify';
+import ToastProvider from "./ui/toastProvider";
 
 export const metadata = {
     title: {
@@ -58,8 +58,9 @@ export default function RootLayout({ children }) {
     return (
         <html lang="es_MX" className="h-full scroll-smooth">
             <body className="h-full">
-                {children}
-                <ToastContainer/>
+                <ToastProvider>
+                    {children}
+                </ToastProvider>
             </body>
         </html>
     );
