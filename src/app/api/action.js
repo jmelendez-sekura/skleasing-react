@@ -27,7 +27,8 @@ export async function sendCotization(prevState, formData){
                 tel: fieldErrors.tel,
                 active: fieldErrors.active,
                 message: fieldErrors.message
-            }
+            },
+            success: "error"
         };
     }
 

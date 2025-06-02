@@ -1,11 +1,11 @@
 'use client'
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import { sendCotization } from "@/app/api/action";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toast } from "react-toastify";
+import { toast} from "react-toastify";
 
 const initialState = {
     data: {
@@ -16,7 +16,7 @@ const initialState = {
         active: "",
         message: ""
     },
-    success: false,
+    success: "default",
     errors: {
         name: "",
         company: "",
@@ -29,6 +29,16 @@ const initialState = {
 
 export default function CotizationForm(){
     const [state, formAction] = useActionState(sendCotization, initialState);
+
+    useEffect(() => {
+        if(state.success === "success"){
+            toast.success("Tu cotización se envío correctamente", {toastId: "sucess1"});
+        }else if(state.success === "error"){
+            toast.error("Ocurrió un error, intentalo de nuevo", {toastId: "error1"});
+        }
+
+        state.success = initialState.success;
+    });
 
     return (
         <form action={formAction} className="space-y-6">
