@@ -20,7 +20,13 @@ export async function POST(request){
         };
 
         return NextResponse.json(response);
-    }catch(error){
-        return NextResponse.json({success: false, message: "Ocurrío un error", error: error, form: {nombre, empresa, correo, telefono, activo, mensaje}, parameters: {url: process.env.DATABASE_URL}});
+    }catch(e){
+        const error = {
+            exception: e,
+            code: e.errorCode,
+            stackTrace: e.stack,
+        };
+
+        return NextResponse.json({success: false, message: "Ocurrío un error", error: error, form: {nombre, empresa, correo, telefono, activo, mensaje}, parameters: {url: process.env.DATABASE_URL, shadow: process.env.SHADOW_DATABASE_URL}});
     }
 }
