@@ -28,7 +28,7 @@ export default function NavBar({}){
                 <Link href="/" target="_self" className="hidden select-none px-3 md:flex items-center font-medium transition-all py-1.5 rounded-full border flex-none hover:bg-black/5 border-transparent text-tertiary">Nosotros</Link>
                 <Link href="/" target="_self" className="hidden select-none px-3 md:flex items-center font-medium transition-all py-1.5 rounded-full border flex-none hover:bg-black/5 border-transparent text-tertiary">Beneficios</Link>
                 <Link href="#Contacto" target="_self" className="hidden select-none px-3 md:flex items-center font-medium transition-all py-1.5 rounded-full border flex-none hover:bg-black/5 border-transparent text-tertiary">Contáctanos</Link>
-                <Link href="#Contacto" className="hidden select-none md:flex items-center font-medium transition-all py-1.5 rounded-full border flex-none px-3 bg-accent hover:bg-accent-hover border-transparent text-white ml-1.5 plausible-event-name=windows-waitlist">
+                <Link href="#Contacto" className="hidden select-none md:flex items-center font-medium transition-all py-1.5 rounded-full border flex-none px-3 bg-accent hover:bg-[#6aabe1] border-transparent text-white ml-1.5 plausible-event-name=windows-waitlist">
                     Cotizar
                 </Link>
                 <Link href="#Contacto" className="select-none md:hidden flex items-center font-medium text-sm transition-all py-1.5 rounded-full border flex-none px-2 border-black/5 hover:bg-black/5 ml-1 plausible-event-name=windows-waitlist">Más información</Link>
