@@ -6,7 +6,7 @@ import Clients from "./components/clients";
 export default function Page() {
     return (
         <>
-            <NavBar />
+            <NavBar/>
             <Header/>
             <Clients/>
             <Contact/>

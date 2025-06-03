@@ -57,7 +57,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
     return (
         <html lang="es_MX" className="h-full scroll-smooth">
-            <body className="h-full">
+            <body className="h-full bg-white">
                 <ToastProvider>
                     {children}
                 </ToastProvider>
